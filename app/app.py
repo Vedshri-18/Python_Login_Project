@@ -1,3 +1,4 @@
+import quickemailverification as quickemailverification
 from flask import Flask, render_template, request, session, logging, url_for, redirect
 from flaskext.mysql import MySQL
 from pymysql.cursors import DictCursor
@@ -16,7 +17,7 @@ app.config['MYSQL_DATABASE_PORT'] = 3306
 app.config['MYSQL_DATABASE_DB'] = 'infoDB'
 mysql.init_app(app)
 
-QUICK_MAIL_VERIFICATION_API_KEY = '26817cd745243111bbd23dc7d4XXXXXXXXX'
+QUICK_MAIL_VERIFICATION_API_KEY = 'b46e0a2720008bd3ed5eXXXXXXXXXX'
 SEND_GRID_API_KEY = 'SG.XXXXX.XXXXXXXXXX'
 
 
@@ -72,9 +73,9 @@ def login():
         print(result)
         print(json_result)
         if (result):
-            return render_template("homepageAfterLogin.html", msg="Logged In Successfully!!!")
+            return render_template("Homepage_Login.html", msg="Logged In Successfully!!!")
         else:
-            return render_template("login.html", msg="Incorret Login ID/Password !")
+            return render_template("login.html", msg="Incorrect Login ID/Password !")
 
     if request.method == "GET":
         return render_template("login.html")
@@ -97,7 +98,7 @@ def sendmail():
         response = sg.send(message)
     except Exception as e:
         print(e.message)
-    return render_template("homepageAfterLogin.html", msg="Message Sent")
+    return render_template("Homepage_Login.html", msg="Message Sent")
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', debug=True)
