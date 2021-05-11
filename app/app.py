@@ -87,7 +87,7 @@ def sendmail():
     sub = request.form.get("subject")
     content = request.form.get("myTextArea")
     message = Mail(
-        from_email='monishaa138@gmail.com',
+        from_email='vedashridhoke@gmail.com',
         to_emails=toemail,
         subject=sub,
         html_content=content)
