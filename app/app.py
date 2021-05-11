@@ -39,7 +39,7 @@ def register():
         cursor.execute('SELECT email FROM information where email=%s', email)
         checkIfemailExists = cursor.fetchall()
         if checkIfemailExists:
-            return render_template("registerion.html",
+            return render_template("registration.html",
                                    msg="Sorry, the email is already taken! Please use a different email")
         ##to verify the email
         client = quickemailverification.Client(QUICK_MAIL_VERIFICATION_API_KEY)
@@ -53,11 +53,11 @@ def register():
                 mysql.get_db().commit()
                 return redirect("home.html", code=302)
             else:
-                return render_template("registerion.html",
+                return render_template("registration.html",
                                        msg="Sorry, this is a invalid email, Please try with a valid mail")
 
     if request.method == "GET":
-        return render_template("registerion.html")
+        return render_template("registration.html")
 
 
 @app.route("/login", methods=['GET', 'POST'])
