@@ -10,4 +10,4 @@ CREATE TABLE IF NOT EXISTS information (
     PRIMARY KEY (`id`)
 );
 INSERT INTO information (firstName, lastName, address, email,password) VALUES
-    ('Monz','Sa','14 Avenue','monz@gmail.com','Hello');
+    ('Ved','Dho','India','ved@gmail.com','Hello');
