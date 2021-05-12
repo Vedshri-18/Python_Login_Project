@@ -18,6 +18,7 @@ app.config['MYSQL_DATABASE_DB'] = 'infoDB'
 mysql.init_app(app)
 
 QUICK_MAIL_VERIFICATION_API_KEY = 'b46e0a2720008bd3ed5eXXXXXXXXXX'
+SEND_GRID_API_KEY = 'SG.XXXXX.XXXXXXXXXX'
 
 
 @app.route("/", methods=['GET'])
